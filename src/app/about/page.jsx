@@ -26,7 +26,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section: Glassmorphism Grid */}
+      {/* Stats Section: Glassmorphism  */}
       <section className="py-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
