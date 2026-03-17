@@ -1,4 +1,8 @@
-import React from 'react';
+'use client'
+import ModalTrigger from '../../components/ModalTrigger';
+import CompleteService from '../../components/CompleteService';
+import EnquiryModal from '../../components/EnquiryModal';
+import { useState } from 'react';
 
 const serviceDetails = [
   {
@@ -25,16 +29,17 @@ const serviceDetails = [
 ];
 
 export default function ServicesPage() {
+   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="bg-[#020617] text-white min-h-screen">
       
       {/* 1. SERVICE HERO */}
-      <section className="relative pt-32 pb-20 px-6 text-center overflow-hidden">
+      <section className="relative pt-10 md:pt-16 md:pb-20 pb-5 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent opacity-50 pointer-events-none" />
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-blue-400 font-mono text-sm tracking-[0.4em] uppercase mb-4">Our Expertise</h2>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-8">
+          <h1 className="text-4xl md:text-7xl md:font-black font-semibold tracking-tight leading-[1.4] md:mb-8 mb-4">
             Digital Solutions <br /> 
             Without <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">Compromise.</span>
           </h1>
@@ -43,15 +48,15 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
-
+     
       {/* 2. THE DEEP DIVE SECTION (Bento Style) */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="md:py-20 py-5 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
           {serviceDetails.map((item, idx) => (
-            <div key={idx} className="group relative p-10 rounded-[2.5rem] bg-slate-900/20 border border-slate-800/50 hover:border-blue-500/30 transition-all duration-500 overflow-hidden">
+            <div key={idx} className="group relative md:p-10 p-5 rounded-[2.5rem] bg-slate-900/20 border border-slate-800/50 hover:border-blue-500/30 transition-all duration-500 overflow-hidden">
               <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${item.gradient} opacity-5 blur-[60px] group-hover:opacity-20 transition-opacity`} />
               
-              <p className="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">{item.category}</p>
+              <p className="text-xs md:font-bold font-semibold tracking-widest text-slate-500 uppercase mb-4">{item.category}</p>
               <h3 className="text-2xl font-bold mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
                 {item.title}
               </h3>
@@ -71,9 +76,9 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-
+      <CompleteService/>
       {/* 3. TECHNICAL STACK (The "How we build" Grid) */}
-      <section className="py-24 bg-slate-950/50 border-y border-slate-800/50 relative">
+      <section className="md:py-18 py-10  bg-slate-950/50 border-y border-slate-800/50 relative ">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h3 className="text-3xl md:text-4xl font-bold mb-6">Our Core Tech Stack</h3>
@@ -102,9 +107,9 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. THE PROCESS (Timeline) */}
-      <section className="py-24 px-6">
+      <section className="py-10 p-5">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-center text-3xl font-bold mb-16">The Road to <span className="text-purple-400">Success</span></h3>
+          <h3 className="text-center text-3xl font-bold md:mb-16 mb-6">The Road to <span className="text-purple-400">Success</span></h3>
           <div className="space-y-12">
             {[
               { step: "01", title: "Discovery & Strategy", desc: "We deep-dive into your business goals and map out the technical blueprint." },
@@ -112,7 +117,7 @@ export default function ServicesPage() {
               { step: "03", title: "Agile Development", desc: "Bi-weekly sprints with full transparency and constant feedback loops." },
               { step: "04", title: "Launch & Support", desc: "Zero-downtime deployment followed by 24/7 technical monitoring." }
             ].map((p, idx) => (
-              <div key={idx} className="flex gap-8 group">
+              <div key={idx} className="flex gap-8 group md:mb-10 mb-5">
                 <div className="text-4xl font-black text-slate-800 group-hover:text-blue-500/30 transition-colors">
                   {p.step}
                 </div>
@@ -127,11 +132,14 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-center">
-        <button className="relative px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 font-bold hover:scale-105 transition-transform shadow-[0_0_40px_rgba(37,99,235,0.2)]">
-          Launch Your Project
-        </button>
+      <section className="py-3 pb-10 text-center">
+        <ModalTrigger openModal={() => setIsModalOpen(true)} />
       </section>
+      <EnquiryModal
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)}
+        />
+      
     </main>
   );
 }

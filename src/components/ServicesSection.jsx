@@ -1,6 +1,8 @@
-import React from 'react';
+'use client'
+import { useState } from 'react';
 import Link from 'next/link';
-
+import ModalTrigger from './ModalTrigger';
+import EnquiryModal from './EnquiryModal'
 const services = [
   {
     title: "Frontend Development",
@@ -59,61 +61,69 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="bg-[#020617] py-12 px-6 relative overflow-hidden">
-      {/* Background Glows to match your Screenshot */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
+    <>
+        <section className="bg-[#020617] md:py-12 py-6 px-6 relative overflow-hidden">
+        {/* Background Glows to match your Screenshot */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10 mb-6">
-        <div className="text-center mb-20">
-          <h2 className="text-white text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            Our Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Services</span>
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            We combine technical excellence with strategic thinking to deliver high-impact digital products.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="group relative p-8 rounded-2xl bg-slate-900/30 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden"
-            >
-              {/* Subtle Gradient Overlay on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="relative z-10">
-                <div className="mb-6 p-3 inline-block rounded-xl bg-slate-950 border border-slate-800 group-hover:border-blue-500/50 transition-colors">
-                  {service.icon}
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3 tracking-tight">
-                  {service.title}
-                </h4>
-                <p className="text-slate-400 leading-relaxed text-sm">
-                  {service.description}
-                </p>
-              </div>
+        <div className="max-w-7xl mx-auto relative z-10 mb-6">
+            <div className="text-center md:mb-20 mb-8">
+            <h2 className="text-white text-3xl md:text-5xl md:font-extrabold font-semi-bold tracking-tight mb-4">
+                Our Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Services</span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+                We combine technical excellence with strategic thinking to deliver high-impact digital products.
+            </p>
             </div>
-          ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+                <div 
+                key={index}
+                className="group relative p-8 rounded-2xl bg-slate-900/30 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden"
+                >
+                {/* Subtle Gradient Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative z-10">
+                    <div className="mb-6 p-3 inline-block rounded-xl bg-slate-950 border border-slate-800 group-hover:border-blue-500/50 transition-colors">
+                    {service.icon}
+                    </div>
+                    <h4 className="text-xl font-bold text-white mb-3 tracking-tight">
+                    {service.title}
+                    </h4>
+                    <p className="text-slate-400 leading-relaxed text-sm">
+                    {service.description}
+                    </p>
+                </div>
+                </div>
+            ))}
+            </div>
         </div>
-      </div>
-        {/* Call to Actions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Link 
-            href="/contact" 
-            className="w-full sm:w-auto px-8 py-4 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
-        >
-            Start Your Project
-        </Link>
-        <Link 
-            href="/services" 
-            className="w-full sm:w-auto px-8 py-4 rounded-lg bg-transparent border border-slate-700 text-white font-semibold hover:bg-slate-800 transition-all"
-        >
-            Explore Our Services
-        </Link>
-        </div>
-    </section>
+            {/* Call to Actions */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* <Link 
+                href="/contact" 
+                className="w-full sm:w-auto px-8 py-4 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
+            >
+                Start Your Project
+            </Link> */}
+            <ModalTrigger openModal={() => setIsModalOpen(true)} />
+            <Link 
+                href="/services" 
+                className="w-full sm:w-auto px-8 py-4 rounded-lg bg-transparent border border-slate-700 text-white font-semibold hover:bg-slate-800 transition-all"
+            >
+                Explore Our Services
+            </Link>
+            </div>
+        </section>
+        <EnquiryModal
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)}
+        />
+    </>    
   );
 }

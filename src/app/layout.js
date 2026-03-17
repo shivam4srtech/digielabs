@@ -1,6 +1,8 @@
-import WhatsAppButton from '@/components/WhatsAppButton';
+
+import WhatsAppButton from '../components/WhatsAppButton';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
+import EnquiryModal from '../components/EnquiryModal'
 import "./globals.css";
 import { Poppins } from 'next/font/google'
 

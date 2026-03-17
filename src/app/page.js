@@ -1,5 +1,5 @@
-import ServicesSection from "@/components/ServicesSection";
-import TypingHero from "@/components/TypingHero";
+import ServicesSection from "../components/ServicesSection";
+import TypingHero from "../components/TypingHero";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,13 +16,13 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-4 pb-4">
           
           {/* Top Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-sm text-slate-300 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-sm text-slate-300 md:mb-8 mb-4">
             <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
             Your Vision, Expertly Engineered
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-[90px]">
+          <h1 className="text-3xl md:text-7xl font-extrabold text-white tracking-tight md:mb-8 mb-4 md:leading-[90px] leading-[1.4]">
             Build Digital Experiences <br className="hidden md:block" />
             That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Drive Results</span>
           </h1>
@@ -34,7 +34,7 @@ export default function Home() {
           <TypingHero/>
 
           {/* Service Tags */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 md:mb-12 mb-6 max-w-3xl mx-auto">
             {['Frontend Dev', 'Backend Dev', 'Mobile Apps', 'Web Apps', 'SEO Optimization', 'Google Ads'].map((service) => (
               <span 
                 key={service} 

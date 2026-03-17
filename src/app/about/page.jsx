@@ -10,12 +10,12 @@ export default function AboutPage() {
   return (
     <main className="bg-[#020617] text-white overflow-hidden">
       {/* Hero Section: The Vision */}
-      <section className="relative pt-32 pb-20 px-6">
+      <section className="relative md:pt-26 pt-8 pb-5 px-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-blue-600/10 to-transparent blur-[120px] pointer-events-none" />
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-blue-500 font-mono text-sm tracking-[0.3em] uppercase mb-4">Our DNA</h2>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8">
+          <h1 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 leading-[1.4]">
             Turning Binary Into <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Business Value.</span>
           </h1>
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section: Glassmorphism Grid */}
-      <section className="py-20 px-6">
+      <section className="py-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, i) => (
