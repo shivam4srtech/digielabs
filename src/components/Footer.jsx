@@ -67,14 +67,43 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-6">Our Services</h3>
             <ul className="space-y-4 text-sm text-slate-400">
-              {['Frontend Development', 'Backend Engineering', 'Mobile App Dev', 'Web Applications', 'SEO Optimization', 'Google Ads Management'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="group flex items-center hover:text-blue-400 transition-colors">
+                <li>
+                  <Link href="/web-development" className="group flex items-center hover:text-blue-400 transition-colors">
                     <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
-                    {item}
+                      Web Development
                   </Link>
                 </li>
-              ))}
+                <li>
+                  <Link href="/mobile-app-development" className="group flex items-center hover:text-blue-400 transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
+                      App Development
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/data-scraping-automation" className="group flex items-center hover:text-blue-400 transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
+                     Data Scraping
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/wordpress-development" className="group flex items-center hover:text-blue-400 transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
+                      Wordpress Development
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/seo-optimization" className="group flex items-center hover:text-blue-400 transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
+                      SEO Optimization
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link href="/google-ads-automation" className="group flex items-center hover:text-blue-400 transition-colors">
+                    <span className="w-2 h-2 rounded-full bg-blue-500/0 group-hover:bg-blue-500 transition-all mr-0 group-hover:mr-2"></span>
+                     Google Ads Automation
+                  </Link>
+                </li>
             </ul>
           </div>
 
@@ -124,8 +153,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {currentYear} StartupLogo. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

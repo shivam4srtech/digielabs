@@ -1,76 +1,87 @@
-import React from 'react';
+import Link from "next/link";
 
 const serviceGroups = [
   {
     id: "01",
-    title: "Automation Solutions",
-    description: "End-to-end workflow and process engineering.",
-    color: "from-blue-500 to-cyan-400",
-    items: ["Business Process Automation", "Workflow Automation", "Task Automation", "Marketing Automation", "Reporting & Dashboard Automation", "Data & File Processing", "Email & Document Generation"]
-  },
-  {
-    id: "02",
-    title: "Google Workspace",
-    description: "Maximized productivity via Google Ecosystem.",
-    color: "from-green-400 to-emerald-500",
-    items: ["Apps Script Development", "Sheets & Docs Automation", "Drive & Forms Automation", "Gmail & Calendar Sync", "Automated Reporting Systems"]
-  },
-  {
-    id: "03",
-    title: "AI & Intelligent Systems",
-    description: "Smart agents and data-driven intelligence.",
-    color: "from-purple-500 to-blue-600",
-    items: ["AI Chatbots & Support Bots", "Lead Generation Bots", "Content & Email Automation", "Business Insights & Analytics", "System Integrations", "Web & Mobile AI Integration"]
-  },
-  {
-    id: "04",
-    title: "API & CRM Solutions",
-    description: "Seamless connectivity across your tech stack.",
-    color: "from-blue-600 to-indigo-500",
-    items: ["Custom API Development", "Third-Party & REST Integration", "Zoho, HubSpot & Salesforce", "CRM Workflow Automation", "Payment & ERP Integration"]
-  },
-  {
-    id: "05",
+    slug: "web-development",
     title: "Web Development",
     description: "Modern, high-performance web engineering.",
     color: "from-cyan-500 to-blue-500",
     items: ["Next.js & React Frontend", "Laravel, Django & Node Backend", "Database Architecture", "Enterprise Web Systems", "Custom Portals & Dashboards"]
   },
   {
-    id: "06",
+    id: "02",
+    slug: "mobile-app-development",
+    title: "Application Dev",
+    description: "Scalable mobile and desktop ecosystems.",
+    color: "from-blue-500 to-purple-500",
+    items: ["SaaS Platform Development", "Android & iOS (Native)", "Cross-Platform (Flutter/React Native)", "Business Management Systems"]
+  },
+   {
+    id: "03",
+    slug: "wordpress-development",
     title: "WordPress Excellence",
     description: "Professional CMS customization & security.",
     color: "from-blue-400 to-indigo-600",
     items: ["Custom Theme & Plugin Dev", "WordPress API & Automation", "Speed & Security Hardening", "WooCommerce Solutions", "Migration & Maintenance"]
   },
+   {
+    id: "04",
+    title: "Digital Marketing",
+    slug: "seo-optimization",
+    description: "Results-driven SEO and Ads management.",
+    color: "from-fuchsia-500 to-pink-500",
+    items: ["Technical & On-Page SEO", "SEO Audits & Performance", "Google Ads Setup & Mgmt", "PPC Automation", "Conversion & Tag Tracking"]
+  },
   {
-    id: "07",
+    id: "05",
+    slug: "google-ads-automation",
+    title: "Automation Solutions",
+    description: "End-to-end workflow and process engineering.",
+    color: "from-blue-500 to-cyan-400",
+    items: ["Business Process Automation", "Workflow Automation", "Task Automation", "Marketing Automation", "Reporting & Dashboard Automation", "Data & File Processing", "Email & Document Generation"]
+  },
+  {
+    id: "06",
+    slug: "data-scraping-automation",
     title: "Data & Scraping",
     description: "Automated intelligence and data mining.",
     color: "from-indigo-500 to-purple-500",
     items: ["Web Data Scraping", "Automated Collection Systems", "Competitor & Price Monitoring", "Lead Extraction", "Data Pipeline Automation"]
   },
   {
+    id: "07",
+    title: "Google Workspace",
+    description: "Maximized productivity via Google Ecosystem.",
+    color: "from-green-400 to-emerald-500",
+    items: ["Apps Script Development", "Sheets & Docs Automation", "Drive & Forms Automation", "Gmail & Calendar Sync", "Automated Reporting Systems"]
+  },
+  {
     id: "08",
+    title: "AI & Intelligent Systems",
+    description: "Smart agents and data-driven intelligence.",
+    color: "from-purple-500 to-blue-600",
+    items: ["AI Chatbots & Support Bots", "Lead Generation Bots", "Content & Email Automation", "Business Insights & Analytics", "System Integrations", "Web & Mobile AI Integration"]
+  },
+  {
+    id: "09",
+    title: "API & CRM Solutions",
+    description: "Seamless connectivity across your tech stack.",
+    color: "from-blue-600 to-indigo-500",
+    items: ["Custom API Development", "Third-Party & REST Integration", "Zoho, HubSpot & Salesforce", "CRM Workflow Automation", "Payment & ERP Integration"]
+  },
+  
+ 
+  
+  {
+    id: "10",
     title: "Python Development",
     description: "Versatile backend and automation logic.",
     color: "from-yellow-400 to-blue-500",
     items: ["Automation Scripts", "Backend API Development", "Machine Learning Integration", "AI Model Deployment", "Data Analytics Tools"]
   },
-  {
-    id: "09",
-    title: "Application Dev",
-    description: "Scalable mobile and desktop ecosystems.",
-    color: "from-blue-500 to-purple-500",
-    items: ["SaaS Platform Development", "Android & iOS (Native)", "Cross-Platform (Flutter/React Native)", "Business Management Systems"]
-  },
-  {
-    id: "10",
-    title: "Digital Marketing",
-    description: "Results-driven SEO and Ads management.",
-    color: "from-fuchsia-500 to-pink-500",
-    items: ["Technical & On-Page SEO", "SEO Audits & Performance", "Google Ads Setup & Mgmt", "PPC Automation", "Conversion & Tag Tracking"]
-  },
+ 
+ 
   {
     id: "11",
     title: "Cloud & Infrastructure",
@@ -109,8 +120,9 @@ export default function CompleteService() {
         {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-3">
           {serviceGroups.map((group) => (
-            <div 
+            <Link 
               key={group.id} 
+              href={group.slug? group.slug: "/services"}
               className="group flex flex-col md:p-8 p-4 rounded-[2.5rem] bg-slate-900/20 border border-slate-800/50 hover:border-blue-500/30 transition-all duration-500"
             >
               <div className="flex justify-between items-start mb-6">
@@ -138,7 +150,7 @@ export default function CompleteService() {
 
               {/* Hover Glow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${group.color} opacity-0 blur-3xl pointer-events-none group-hover:opacity-5 transition-opacity duration-700`} />
-            </div>
+            </Link>
           ))}
         </div>
       </div>

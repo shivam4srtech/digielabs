@@ -86,26 +86,9 @@ export default function Header(){
                     </ul>
                 <ResponsiveRender breakpoint={768}
                     mobile={
-                        <>
-                            <div ref={searchRef} className="refWrapper">
-                                <div>
-                                    { showSearch? (<button onClick={()=>setShowSearch(false) } className="search_btn"><IoCloseOutline size={24} /></button>): (<button className="search_btn" onClick={()=>setShowSearch(true)}><GoSearch size={24}/></button>)}
-                                </div>
-                                { showSearch? 
-                                (
-                                    <div className="absolute top-[52px] left-[0]  w-[100%] bg-[#fff]  mobile_search p-4">
-                                        <div className="m-auto">
-                                            <servicesearch/>
-                                        </div>
-                                    </div>
-                                )
-                                :
-                                ( 
-                                ""
-                                )
-                                }
-                            </div>    
-                        </>
+                        <div className="mobile_contact">
+                            <ContactButton/>   
+                        </div>
                     }
                     desktop={
                         <>

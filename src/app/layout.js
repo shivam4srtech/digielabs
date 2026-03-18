@@ -2,7 +2,9 @@
 import WhatsAppButton from '../components/WhatsAppButton';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
-import EnquiryModal from '../components/EnquiryModal'
+import CookieConsent from '../components/CookieConsent';
+import GoogleAnalytics from '../components/GoogleAnalytics';
+
 import "./globals.css";
 import { Poppins } from 'next/font/google'
 
@@ -26,6 +28,8 @@ export default function RootLayout({ children }) {
           {children}
         <Footer/>  
         <WhatsAppButton/>
+        <CookieConsent/>
+        <GoogleAnalytics/>
       </body>
     </html>
   );

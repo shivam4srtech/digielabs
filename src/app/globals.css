@@ -58,4 +58,15 @@ input::-webkit-inner-spin-button {
   .modal-body{
     max-height: 95vh;
   }
+  .mobile_contact a button{
+    padding: .5rem;
+  }
+  .mobile_contact a button span{
+    font-size: .8rem;
+  }
+
+}
+.menu_icon{
+  display: inline-flex;
+  align-items: center;
 }
