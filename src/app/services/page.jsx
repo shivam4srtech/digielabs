@@ -39,7 +39,7 @@ export default function ServicesPage() {
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-blue-400 font-mono text-sm tracking-[0.4em] uppercase mb-4">Our Expertise</h2>
-          <h1 className="text-4xl md:text-7xl md:font-black font-semibold tracking-tight leading-[1.4] md:mb-8 mb-4">
+          <h1 className="text-4xl md:text-[5rem] md:font-black font-semibold tracking-tight leading-[1.4] md:mb-8 mb-4">
             Digital Solutions <br /> 
             Without <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">Compromise.</span>
           </h1>

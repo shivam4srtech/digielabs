@@ -64,7 +64,7 @@ export default function Header(){
                             />
                             DIGIELABS
                         </Link> */}
-                         <Link href="/" className="text-2xl font-extrabold text-black tracking-tighter mb-4 block">
+                         <Link href="/" className="text-2xl font-extrabold text-black tracking-tighter block">
                             Digie<span className="text-blue-500">LABS.</span>
                          </Link>
                     </div>
