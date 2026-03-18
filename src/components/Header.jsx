@@ -80,6 +80,9 @@ export default function Header(){
                         <li className="flex items-center">
                             <Link href={'/services'} className={`${defautNavClasses} ${pathname === "/services" ? "active" : ''}`} >Services</Link>
                         </li>
+                         <li className="flex items-center">
+                            <Link href={'/blogs'} className={`${defautNavClasses} ${pathname === "/blogs" ? "active" : ''}`} >Blogs</Link>
+                        </li>
                     </ul>
                 <ResponsiveRender breakpoint={768}
                     mobile={
@@ -172,6 +175,17 @@ export default function Header(){
                                     }`}
                                     >
                                     Services
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                    href="/blogs"
+                                    onClick={() => setIsOpen(false)}
+                                    className={`${defautNavClasses} ${
+                                        pathname === "/blogs" ? "active" : ""
+                                    }`}
+                                    >
+                                    Blogs
                                     </Link>
                                 </li>
                                 </ul>

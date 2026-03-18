@@ -16,14 +16,13 @@ export default function RelatedServices() {
     { name: "Web Development", icon: <Globe />, color: "from-blue-500/10", glow: "group-hover:shadow-blue-900/40", slug: "web-development" },
     { name: "Mobile App Development", icon: <Smartphone />, color: "from-purple-500/10", glow: "group-hover:shadow-purple-900/40", slug: "mobile-app-development" },
     { name: "Data Scraping & Automation", icon: <DatabaseZap />, color: "from-emerald-500/10", glow: "group-hover:shadow-emerald-900/40", slug: "data-scraping-automation" },
-    { name: "WordPress Development", icon: <FaWordpressSimple />, color: "from-cyan-500/10", glow: "group-hover:shadow-cyan-900/40" },
-    { name: "Python & Backend Systems", icon: <Code2 />, color: "from-indigo-500/10", glow: "group-hover:shadow-indigo-900/40" },
-    { name: "SEO Optimization", icon: <Search />, color: "from-amber-500/10", glow: "group-hover:shadow-amber-900/40" },
-    { name: "Google Ads Automation", icon: <LineChart />, color: "from-red-500/10", glow: "group-hover:shadow-red-900/40" },
+    { name: "WordPress Development", icon: <FaWordpressSimple />, color: "from-cyan-500/10", glow: "group-hover:shadow-cyan-900/40", slug: 'wordpress-development' },
+    { name: "SEO Optimization", icon: <Search />, color: "from-amber-500/10", glow: "group-hover:shadow-amber-900/40", slug: "seo-optimization" },
+    { name: "Google Ads Automation", icon: <LineChart />, color: "from-red-500/10", glow: "group-hover:shadow-red-900/40", slug: "google-ads-automation" },
   ];
 
   return (
-    <section className="relative py-10 overflow-hidden bg-[#020617]">
+    <section className="relative py-10 overflow-hidden bg-[#020617] p-6">
       {/* Background Glow Effect */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-indigo-600/10 blur-[150px] rounded-full -z-10"></div>
       
