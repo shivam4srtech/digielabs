@@ -66,7 +66,7 @@ export default function FireflyButton({ onClick }) {
           </div>
 
           <div className="text-left">
-            <h3 className="[word-spacing:20px] text-[1.1rem] md:text-2xl md:font-bold font-semibold text-white tracking-tighter md:leading-none leading-[1] mb-1">
+            <h3 className="[word-spacing:5px] text-[1.1rem] md:text-2xl md:font-bold font-semibold text-white tracking-tighter md:leading-none leading-[1] mb-1">
               Schedule <span className="text-amber-400"> Free </span> Tech Consultation
             </h3>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 group-hover:text-amber-200/60 transition-colors">
