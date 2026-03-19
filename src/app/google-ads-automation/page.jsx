@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   Target, 
   BarChart3, 
@@ -84,7 +86,9 @@ export default function GoogleAdsAutomationBlog() {
           ))}
         </div>
       </section>
-
+      <div>
+          <ScheduleModal/>
+      </div>
       {/* --- DETAILED ENGINEERING CONTENT --- */}
       <article className="max-w-5xl mx-auto px-6 md:py-20 py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 gap-6">
@@ -163,9 +167,9 @@ export default function GoogleAdsAutomationBlog() {
       </article>
 
       {/* --- CTA SECTION --- */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
+      <section className="max-w-5xl mx-auto px-6 pb-10">
         <div className="md:p-16 p-6 pt-16 pb-16 bg-slate-900 border border-slate-800 rounded-[3rem] text-center relative group overflow-hidden">
-          <div className="absolute inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className=" inset-0 bg-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <TrendingUp size={150} className="absolute -bottom-10 -left-10 opacity-5 -rotate-12" />
           
           <h2 className="md:text-4xl text-3xl font-bold text-white mb-6">Scale Your Revenue, Not Your Workload</h2>
@@ -178,6 +182,9 @@ export default function GoogleAdsAutomationBlog() {
           </Link>
         </div>
       </section>
+       <div className='px-6'>
+                   <Pricing/>
+       </div>
       <RelatedServices/>
       <ReadyToScale/>
     </main>

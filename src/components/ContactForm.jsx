@@ -36,12 +36,14 @@ export default function ContactForm() {
     setLoading(true);
     setErrors({}); // Reset errors on new submission
     setResult({ type: '', message: '' });
+    // Capture the current URL
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({...formData, pageUrl: currentUrl}),
       });
 
       const data = await response.json();

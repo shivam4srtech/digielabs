@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   Smartphone, 
   Layers, 
@@ -66,7 +68,9 @@ export default function MobileEngineeringBlog() {
           </p>
         </div>
       </div>
-
+      <div>
+            <ScheduleModal/>
+      </div>
       {/* --- TECH STACK GRID --- */}
       <section className="max-w-5xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -95,7 +99,7 @@ export default function MobileEngineeringBlog() {
       </section>
 
       {/* --- DETAILED ENGINEERING CONTENT --- */}
-      <article className="max-w-5xl mx-auto px-6 md:py-20 py-0">
+      <article className="max-w-5xl mx-auto px-6 md:py-10 py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           <div className="lg:col-span-7 space-y-16">
@@ -154,6 +158,9 @@ export default function MobileEngineeringBlog() {
                </p>
             </div>
           </aside>
+        </div>
+        <div>
+            <Pricing/>
         </div>
       </article>
 

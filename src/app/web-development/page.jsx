@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   Code2, 
   Cpu, 
@@ -14,6 +16,9 @@ import {
   Database,
   Server
 } from 'lucide-react';
+
+
+
 
 
 export default function WebDevelopmentServiceBlog() {
@@ -56,10 +61,10 @@ export default function WebDevelopmentServiceBlog() {
       </div>
 
       {/* --- CONTENT SECTION --- */}
-      <article className="max-w-5xl mx-auto px-6 py-12">
+      <article className="max-w-5xl mx-auto px-6 py-6">
         
         {/* The Triple Threat: Design, Develop, Deploy */}
-        <section className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4 md:mb-24 mb-12">
+        <section className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4 md:mb-10 mb-6">
           {[
             { title: "Design", desc: "User-centric UI/UX focused on conversion and intuitive flows.", color: "from-blue-500/20" },
             { title: "Develop", desc: "Clean, maintainable code using modern frameworks and AI-assisted logic.", color: "from-indigo-500/20" },
@@ -71,7 +76,9 @@ export default function WebDevelopmentServiceBlog() {
             </div>
           ))}
         </section>
-
+        <div className='mb-8'>
+             <ScheduleModal/>
+        </div>
         {/* Detailed Service Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-6">
           <div className="lg:col-span-8 space-y-12">
@@ -79,6 +86,7 @@ export default function WebDevelopmentServiceBlog() {
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                 <Code2 className="text-indigo-500" /> Full-Stack Mastery
               </h2>
+             
               <p className="text-lg leading-relaxed mb-6">
                 Our approach to web development is holistic. We don't believe in "one size fits all." 
                 By utilizing <strong className="text-white">Next.js and React</strong> for the frontend, we deliver 
@@ -137,14 +145,16 @@ export default function WebDevelopmentServiceBlog() {
             </div>
           </aside>
         </div>
-
+        
         {/* "You May Also Interested In" Section */}
         <RelatedServices/>
       </article>
 
       {/* --- Ready to sacle lazyLoaded --- */}
+      <div className='px-6'>
+                <Pricing/>
+      </div>
       <ReadyToScale/>
-     
     </main>
   );
 }

@@ -1,8 +1,11 @@
 'use client'
+import dynamic from 'next/dynamic';
 import ModalTrigger from '../../components/ModalTrigger';
 import CompleteService from '../../components/CompleteService';
 import EnquiryModal from '../../components/EnquiryModal';
 import { useState } from 'react';
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 
 const serviceDetails = [
   {
@@ -48,7 +51,7 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
-     
+       <ScheduleModal/>
       {/* 2. THE DEEP DIVE SECTION (Bento Style) */}
       <section className="md:py-20 py-5 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
@@ -77,6 +80,7 @@ export default function ServicesPage() {
         </div>
       </section>
       <CompleteService/>
+      <Pricing/>
       {/* 3. TECHNICAL STACK (The "How we build" Grid) */}
       <section className="md:py-18 py-10  bg-slate-950/50 border-y border-slate-800/50 relative ">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   Search, 
   BarChart4, 
@@ -46,7 +48,7 @@ export default function SEOOptimizationBlog() {
     <main className="min-h-screen bg-[#020617] text-slate-300 selection:bg-indigo-500/30">
       
       {/* --- HERO SECTION --- */}
-      <header className="relative md:pt-20 pt-10 md:pb-20 pb-0 px-6 overflow-hidden">
+      <div className="relative md:pt-20 pt-10 md:pb-20 pb-0 px-6 overflow-hidden">
         <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-indigo-600/10 blur-[150px] rounded-full -z-10"></div>
         
         <div className="max-w-5xl mx-auto">
@@ -67,8 +69,10 @@ export default function SEOOptimizationBlog() {
             data-driven technical SEO with high-authority content strategies to drive sustainable organic growth.
           </p>
         </div>
-      </header>
-
+      </div>
+      <div>
+            <ScheduleModal/>
+      </div>
       {/* --- SEO PILLARS GRID --- */}
       <section className="max-w-5xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -122,7 +126,7 @@ export default function SEOOptimizationBlog() {
                  that bleed your crawl budget.
                </p>
             </section>
-
+              
             {/* Off-Page Section */}
             <section>
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -135,6 +139,7 @@ export default function SEOOptimizationBlog() {
                 your site is recognized as a leader in your industry.
               </p>
             </section>
+            
           </div>
 
           {/* SIDEBAR - AUDIT METRICS */}
@@ -169,6 +174,9 @@ export default function SEOOptimizationBlog() {
                </div>
             </div>
           </aside>
+        </div>
+        <div>
+            <Pricing/>
         </div>
       </article>
 

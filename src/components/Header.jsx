@@ -64,8 +64,8 @@ export default function Header(){
                             />
                             DIGIELABS
                         </Link> */}
-                         <Link href="/" className="text-2xl font-extrabold text-black tracking-tighter block">
-                            Digie<span className="text-blue-500">LABS.</span>
+                         <Link href="/" className="md:text-3xl text-2xl font-extrabold text-black tracking-tighter block">
+                            Digie<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">LABS.</span>
                          </Link>
                     </div>
                    
@@ -119,12 +119,15 @@ export default function Header(){
                                     }`}
                                 >
                                 {/* Close Button */}
-                                <div className="flex justify-end p-4 border-b">
+                                <div className="flex justify-between p-4 border-b">
+                                <div  className="md:text-3xl text-2xl font-extrabold text-black tracking-tighter block">
+                                    Digie<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">LABS.</span>
+                                </div>
                                 <button onClick={() => setIsOpen(false)}>
                                     <IoCloseOutline size={26} />
                                 </button>
                                 </div>
-
+                                 
                                 {/* Mobile Nav Links */}
                                 <ul className="flex flex-col">
                                 <li>

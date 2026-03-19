@@ -1,16 +1,28 @@
 'use client'
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Link from 'next/link';
 import ModalTrigger from './ModalTrigger';
 import EnquiryModal from './EnquiryModal'
+import { FaWordpressSimple } from "react-icons/fa";
+const ScheduleModal = dynamic(() => import('./ScheduleModal'), { ssr: false });
 const services = [
   {
-    title: "Frontend Development",
-    description: "Crafting pixel-perfect, highly interactive user interfaces using Next.js and Tailwind CSS.",
+    title: "Web Applications",
+    description: "Developing complex SaaS platforms and enterprise-grade web tools from scratch.",
     icon: (
-      <svg className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
       </svg>
+    ),
+  },
+  {
+    title: "WordPress Development",
+    description: "We transform the world’s most popular CMS into a high-octane business engine.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill='purple' className="w-8 h-8 text-purple-400">
+        <path d="M61.7 169.4l101.5 278c-71-34.4-119.9-107.2-119.9-191.4 0-30.9 6.6-60.1 18.4-86.6zm337.9 75.9c0-26.3-9.4-44.5-17.5-58.7-10.8-17.5-20.9-32.4-20.9-49.9 0-19.6 14.8-37.8 35.7-37.8 .9 0 1.8 .1 2.8 .2-37.9-34.7-88.3-55.9-143.7-55.9-74.3 0-139.7 38.1-177.8 95.9 5 .2 9.7 .3 13.7 .3 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l77.5 230.4 46.6-139.6-33.1-90.8c-11.5-.7-22.3-2-22.3-2-11.5-.7-10.1-18.2 1.3-17.5 0 0 35.1 2.7 56 2.7 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l76.9 228.7 21.2-70.9c9-29.4 16-50.5 16-68.7zM259.7 274.6L195.9 460.1c19.1 5.6 39.2 8.7 60.1 8.7 24.8 0 48.5-4.3 70.6-12.1-.6-.9-1.1-1.9-1.5-2.9L259.7 274.6zm183-120.7c.9 6.8 1.4 14 1.4 21.9 0 21.6-4 45.8-16.2 76.2l-65 187.9c63.3-36.9 105.8-105.4 105.8-183.9 0-37-9.4-71.8-26-102.1zM8 256a248 248 0 1 1 496 0 248 248 0 1 1 -496 0zm484.6 0a236.6 236.6 0 1 0 -473.2 0 236.6 236.6 0 1 0 473.2 0z"/>
+     </svg>
     ),
   },
   {
@@ -49,27 +61,23 @@ const services = [
       </svg>
     ),
   },
-  {
-    title: "Web Applications",
-    description: "Developing complex SaaS platforms and enterprise-grade web tools from scratch.",
-    icon: (
-      <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-      </svg>
-    ),
-  },
+  
 ];
 
 export default function ServicesSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <>
-        <section className="bg-[#020617] md:py-12 py-6 px-6 relative overflow-hidden">
+    <> 
+      
+        <section className="bg-[#020617]  py-6 px-6 relative overflow-hidden">
+          <div className='md:pb-10'>
+              <ScheduleModal/>
+          </div>
         {/* Background Glows to match your Screenshot */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10 mb-6">
+        <div className="max-w-7xl mx-auto relative z-10 mb-6 mt-6">
             <div className="text-center md:mb-20 mb-8">
             <h2 className="text-white text-3xl md:text-5xl md:font-extrabold font-semi-bold tracking-tight mb-4">
                 Our Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Services</span>

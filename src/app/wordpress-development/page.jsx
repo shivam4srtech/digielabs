@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   Layout, 
   Blocks, 
@@ -67,7 +69,9 @@ export default function WordPressEngineeringBlog() {
           </p>
         </div>
       </div>
-
+      <div>
+          <ScheduleModal/>
+      </div>
       {/* --- CAPABILITIES GRID --- */}
       <section className="max-w-5xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,7 +88,7 @@ export default function WordPressEngineeringBlog() {
       </section>
 
       {/* --- CORE CONTENT --- */}
-      <article className="max-w-5xl mx-auto px-6 py-6 md:py-20 pt-0">
+      <article className="max-w-5xl mx-auto px-6 py-6 md:py-10 pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 md-8">
           
           <div className="lg:col-span-8 space-y-16">
@@ -119,7 +123,7 @@ export default function WordPressEngineeringBlog() {
                  Learn about our design process <ArrowUpRight size={14} />
                </Link>
             </section>
-
+            
             <section>
               <h2 className="text-3xl font-bold text-white mb-6">WooCommerce Mastery</h2>
               <p className="text-slate-400 mb-6">
@@ -169,6 +173,9 @@ export default function WordPressEngineeringBlog() {
             </div>
           </aside>
         </div>
+        <div className='w-[100%]'>
+                <Pricing/>
+            </div>
       </article>
       <ReadyToScale/>
       <RelatedServices/>

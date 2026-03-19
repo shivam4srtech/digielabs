@@ -5,6 +5,7 @@ const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ss
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Clock, ChevronRight } from 'lucide-react';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 
 export default function BlogArchive() {
   const blogs = [
@@ -115,7 +116,9 @@ export default function BlogArchive() {
           </motion.p>
         </div>
       </section>
-
+      <div className='py-10'>
+          <ScheduleModal/>
+      </div>
       {/* --- BLOG GRID --- */}
       <section className="max-w-7xl mx-auto px-6">
         <motion.div 

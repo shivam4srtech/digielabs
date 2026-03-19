@@ -1,12 +1,16 @@
+
+
 import ServicesSection from "../components/ServicesSection";
 import TypingHero from "../components/TypingHero";
 import Image from "next/image";
 import Link from "next/link";
+import Pricing from '../components/Pricing';
+
 
 export default function Home() {
   return (
     <>
-      <section className="relative w-full bg-slate-950 overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="relative w-full bg-slate-950 overflow-hidden min-h-screen flex items-center justify-center">
         {/* Background Gradients */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px]" />
@@ -51,7 +55,11 @@ export default function Home() {
         {/* Optional: Bottom fade transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
     </section>
+  
     <ServicesSection/>
+    <Pricing/>
+   
     </>
+    
   );
 }

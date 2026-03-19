@@ -1,4 +1,7 @@
-
+'use client'
+import dynamic from "next/dynamic";
+import Link from "next/link"
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 const stats = [
   { label: 'Projects Delivered', value: '150+', color: 'text-blue-400' },
   { label: 'Client Satisfaction', value: '99%', color: 'text-purple-400' },
@@ -25,7 +28,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
+      <ScheduleModal/>
       {/* Stats Section: Glassmorphism  */}
       <section className="py-10 px-6">
         <div className="max-w-7xl mx-auto">
@@ -92,9 +95,9 @@ export default function AboutPage() {
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto p-12 rounded-[3rem] bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-white/5 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to evolve your digital presence?</h2>
-          <button className="px-10 py-4 rounded-full bg-white text-black font-bold hover:bg-blue-400 hover:text-white transition-all transform hover:scale-105">
+          <Link href='/contact' className="px-10 py-4 rounded-full bg-white text-black font-bold hover:bg-blue-400 hover:text-white transition-all transform hover:scale-105">
             Join the Journey
-          </button>
+          </Link>
         </div>
       </section>
     </main>

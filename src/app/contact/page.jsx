@@ -1,8 +1,15 @@
+'use client';
 import ContactUsForm from "../../components/ContactForm";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function ContactPage() {
+  const phoneNumber = "8050739493"; 
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const message = `Hello! I'm interested in your development services. Redirected from ${currentUrl}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   return (
+  
     <section className="relative min-h-screen bg-[#020617] overflow-hidden flex items-center justify-center md:py-8 py-6 px-6">
       {/* Dynamic Background Blurs (Matching your Hero) */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full" />
@@ -11,7 +18,7 @@ export default function ContactPage() {
       <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 md:gap-12 gap-8 items-start">
         
         {/* Left Side: Branding & Info */}
-        <div className="space-y-8">
+        <div className="space-y-8 order-last lg:order-none">
           <div>
             <h1 className="text-3xl md:text-5xl md:text-6xl md:font-extrabold font-bold text-white tracking-tight mb-6">
               Let’s Build <br />
@@ -24,7 +31,7 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             {/* Contact Detail 1 */}
-            <div className="flex items-center gap-4 group">
+            <Link href={whatsappUrl} target="_blank"  rel="noopener noreferrer" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-blue-500/50 transition-all">
                 <FaWhatsapp  fill="#25D366"/>
               </div>
@@ -32,7 +39,7 @@ export default function ContactPage() {
                 <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">WhatsApp Us</p>
                 <p className="text-white font-medium">+91 80507 39493</p>
               </div>
-            </div>
+            </Link>
             {/* Contact Detail 1 */}
             <div className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-blue-500/50 transition-all">
@@ -47,7 +54,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Detail 2 */}
-            <div className="flex items-center gap-4 group">
+            <Link href={'https://maps.app.goo.gl/NCMmQyjm8MPB5xmX7'} target="_blank" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-purple-500/50 transition-all">
                 <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -59,7 +66,7 @@ export default function ContactPage() {
                 <p className="text-white font-medium">Floor 405, Maheshwari Chambers, <br />Irram Manzil Colony, Punjagutta,<br />
                  Hyderabad, Telangana 500082.</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 

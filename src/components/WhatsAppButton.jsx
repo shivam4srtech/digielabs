@@ -1,9 +1,17 @@
-
-
+'use client';
+import { useState, useEffect } from 'react';
 export default function WhatsAppButton() {
   const phoneNumber = "8050739493"; 
-  const message = "Hello! I'm interested in your development services.";
-  
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  // 2. Capture the URL only after the component mounts on the client
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
+
+  const message = `Hello! I'm interested in your development services. Redirected from ${currentUrl}`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

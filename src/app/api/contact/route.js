@@ -7,7 +7,7 @@ const senderEmail = process.env.MAIL_FROM_ADDRESS || "shivam@sociallabs.com";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, phone, service, message } = body;
+    const { name, email, phone, service, message, pageUrl } = body;
 
     // Backend Validation Logic
     const errors = {};
@@ -41,6 +41,7 @@ export async function POST(req) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Page URL:</strong> ${pageUrl}</p>
         <div style="background: #f9fafb; padding: 15px; border-radius: 5px; margin-top: 10px;">
           <strong>Message:</strong><br/>${message}
         </div>
@@ -58,7 +59,7 @@ export async function POST(req) {
     await transporter.sendMail({
   from: `"${senderName}" <${senderEmail}>`,
   to: email,
-  subject: `Project Initialized: ${service} | DIGIELABS`,
+  subject: `Confirmation Email: ${service} | DIGIELABS`,
   html: `
     <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #2d3436; max-width: 600px; margin: 0 auto; border: 1px solid #edf2f7; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
       

@@ -36,8 +36,8 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-extrabold text-white tracking-tighter mb-4 block">
-              Digie<span className="text-blue-500">LABS.</span>
+            <Link href="/" className="md:text-4xl text-2xl font-extrabold text-white tracking-tighter mb-4 block">
+              Digie<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">LABS.</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Empowering businesses with cutting-edge web development, robust mobile apps, and data-driven marketing strategies.

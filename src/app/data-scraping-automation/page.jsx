@@ -4,6 +4,8 @@ import Link from 'next/link'
 const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
 const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
 const ScraperLiveStatus = dynamic(() => import('../../components/ScraperLiveStatus'), { ssr: false });
+import Pricing from '../../components/Pricing';
+const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
 import { 
   DatabaseZap, 
   Binary, 
@@ -52,7 +54,7 @@ export default function DataAutomationDetailedBlog() {
     <main className="min-h-screen bg-[#020617] text-slate-300 selection:bg-emerald-500/30">
       
       {/* --- HERO SECTION --- */}
-      <header className="relative md:pt-20 pt-8 md:pb-20 pb-8 px-6 overflow-hidden">
+      <div className="relative md:pt-20 pt-8 md:pb-20 pb-8 px-6 overflow-hidden">
         {/* Theme-Consistent Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-emerald-600/10 blur-[150px] rounded-full -z-10"></div>
         
@@ -74,8 +76,8 @@ export default function DataAutomationDetailedBlog() {
             extraction pipelines that turn fragmented web content into structured, ready-to-use intelligence.
           </p>
         </div>
-      </header>
-
+      </div>
+       <ScheduleModal/>
       {/* --- ENGINEERING SPECS GRID --- */}
       <section className="max-w-5xl mx-auto px-6 md:py-12 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -181,6 +183,7 @@ export default function DataAutomationDetailedBlog() {
       {/* --- BOTTOM CTA --- */}
       <section className="max-w-5xl mx-auto px-6 md:pb-18 pb-8">
         <ScraperLiveStatus/>
+        
         <div className="md:p-14 pb-[3rem] p-3 bg-slate-900 border border-slate-800 rounded-[3rem] text-center relative">
           <div className="absolute top-0 right-10 opacity-5">
             <DatabaseZap size={200} />
@@ -190,11 +193,11 @@ export default function DataAutomationDetailedBlog() {
             Ready to automate your market research or lead generation? 
             Let's build a custom data pipeline that gives you a 10x edge.
           </p>
-          <Link href='/contact'className="px-12 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all">
+          <Link href='/contact'className="md:px-12 px-6 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all">
             Consult a Data Engineer
           </Link>
         </div>
-         
+         <Pricing/>
       </section>
      
       <RelatedServices/>
