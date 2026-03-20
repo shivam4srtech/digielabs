@@ -10,7 +10,7 @@ import Pricing from '../components/Pricing';
 export default function Home() {
   return (
     <>
-    <section className="relative w-full bg-slate-950 overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="relative w-full bg-slate-950 overflow-hidden md:min-h-screen flex items-center justify-center">
         {/* Background Gradients */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px]" />
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl md:text-7xl font-extrabold text-white tracking-tight md:mb-8 mb-4 md:leading-[90px] leading-[1.4]">
+          <h1 className="text-4xl md:text-7xl font-extrabold text-white tracking-tight md:mb-8 mb-4 md:leading-[90px] leading-[1.4]">
             Build Digital Experiences <br className="hidden md:block" />
             That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Drive Results</span>
           </h1>

@@ -72,16 +72,16 @@ export default function Header(){
                 </div>
                  <ul className="navLinks flex item-center items-center gap-5 desktop_nav_links">
                         <li className="flex items-center">
-                            <Link href={'/'} className={`${defautNavClasses} ${pathname === "/" ? "active" : ''}`} >Home</Link>
+                            <Link href={'/'} className={`${defautNavClasses} ${pathname === "/" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ''}`} >Home</Link>
                         </li>
                         <li className="flex items-center">
-                            <Link href={'/about'} className={`${defautNavClasses} ${pathname === "/about" ? "active" : ''}`} >About</Link>
+                            <Link href={'/about'} className={`${defautNavClasses} ${pathname === "/about" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 " : ''}`} >About</Link>
                         </li>
                         <li className="flex items-center">
-                            <Link href={'/services'} className={`${defautNavClasses} ${pathname === "/services" ? "active" : ''}`} >Services</Link>
+                            <Link href={'/services'} className={`${defautNavClasses} ${pathname === "/services" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ''}`} >Services</Link>
                         </li>
                          <li className="flex items-center">
-                            <Link href={'/blogs'} className={`${defautNavClasses} ${pathname === "/blogs" ? "active" : ''}`} >Blogs</Link>
+                            <Link href={'/blogs'} className={`${defautNavClasses} ${pathname === "/blogs" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 " : ''}`} >Blogs</Link>
                         </li>
                     </ul>
                 <ResponsiveRender breakpoint={768}
@@ -135,7 +135,7 @@ export default function Header(){
                                     href="/"
                                     onClick={() => setIsOpen(false)}
                                     className={`${defautNavClasses} ${
-                                        pathname === "/" ? "active" : ""
+                                        pathname === "/" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
                                     }`}
                                     >
                                     Home
@@ -146,7 +146,7 @@ export default function Header(){
                                     href="/about"
                                     onClick={() => setIsOpen(false)}
                                     className={`${defautNavClasses} ${
-                                        pathname === "/about" ? "active" : ""
+                                        pathname === "/about" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
                                     }`}
                                     >
                                     About
@@ -157,7 +157,7 @@ export default function Header(){
                                     href="/services"
                                     onClick={() => setIsOpen(false)}
                                     className={`${defautNavClasses} ${
-                                        pathname === "/services" ? "active" : ""
+                                        pathname === "/services" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
                                     }`}
                                     >
                                     Services
@@ -168,7 +168,7 @@ export default function Header(){
                                     href="/blogs"
                                     onClick={() => setIsOpen(false)}
                                     className={`${defautNavClasses} ${
-                                        pathname === "/blogs" ? "active" : ""
+                                        pathname === "/blogs" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
                                     }`}
                                     >
                                     Blogs

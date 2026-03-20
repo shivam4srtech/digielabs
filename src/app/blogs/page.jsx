@@ -97,7 +97,7 @@ export default function BlogArchive() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl md:font-black font-bold text-white mb-8 tracking-tighter md:leading-[1] leading:[1.4]"
+            className="text-5xl md:text-8xl md:font-black font-bold text-white mb-8 tracking-tighter md:leading-[1] leading-[1.4]"
           >
             Engineering <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500">
@@ -116,7 +116,7 @@ export default function BlogArchive() {
           </motion.p>
         </div>
       </section>
-      <div className='py-10'>
+      <div className='py-10 px-3'>
           <ScheduleModal/>
       </div>
       {/* --- BLOG GRID --- */}
