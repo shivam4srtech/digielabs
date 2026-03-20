@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
 export default function ContactPage() {
-  const phoneNumber = "8050739493"; 
+  const phoneNumber = "918050739493"; 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const message = `Hello! I'm interested in your development services. Redirected from ${currentUrl}`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -41,7 +41,7 @@ export default function ContactPage() {
               </div>
             </Link>
             {/* Contact Detail 1 */}
-            <div className="flex items-center gap-4 group">
+            <Link href={"mailto:hello@digielabs.com"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-blue-500/50 transition-all">
                 <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -51,10 +51,10 @@ export default function ContactPage() {
                 <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Email Us</p>
                 <p className="text-white font-medium">hello@digielabs.com</p>
               </div>
-            </div>
+            </Link>
 
             {/* Contact Detail 2 */}
-            <Link href={'https://maps.app.goo.gl/NCMmQyjm8MPB5xmX7'} target="_blank" className="flex items-center gap-4 group">
+            <Link href={'https://maps.app.goo.gl/NCMmQyjm8MPB5xmX7'} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:border-purple-500/50 transition-all">
                 <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

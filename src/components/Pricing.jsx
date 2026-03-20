@@ -30,12 +30,12 @@ export default function Pricing() {
 
             <div className="relative z-10 flex flex-col items-center text-center">
                 {/* Tagline */}
-                <div className="flex items-center gap-2 mb-0 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-[0.2em]">
+                <div className="flex items-center gap-2 mb-0 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-[0.2em] leading-[1.4]">
                 <Sparkles size={14} /> Tailored Engineering Solutions
                 </div>
 
                 {/* Main Heading */}
-                <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-tight">
+                <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-tight [word-spacing:5px]">
                 Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500">Pricing</span>
                 </h2>
 

@@ -9,6 +9,7 @@ const ScheduleModal = dynamic(() => import('./ScheduleModal'), { ssr: false });
 const services = [
   {
     title: "Web Applications",
+    slug: "web-development",
     description: "Developing complex SaaS platforms and enterprise-grade web tools from scratch.",
     icon: (
       <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,6 +19,7 @@ const services = [
   },
   {
     title: "WordPress Development",
+    slug: "wordpress-development",
     description: "We transform the world’s most popular CMS into a high-octane business engine.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill='purple' className="w-8 h-8 text-purple-400">
@@ -27,6 +29,7 @@ const services = [
   },
   {
     title: "Backend Engineering",
+     slug: "data-scraping-automation",
     description: "Architecting scalable, secure server-side logic and robust API integrations.",
     icon: (
       <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,6 +39,7 @@ const services = [
   },
   {
     title: "Mobile Apps",
+    slug: "mobile-app-development",
     description: "Building native-feel iOS and Android applications with cross-platform efficiency.",
     icon: (
       <svg className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,6 +49,7 @@ const services = [
   },
   {
     title: "SEO Optimization",
+    slug: "seo-optimization",
     description: "Technical SEO strategies designed to dominate search rankings and drive organic growth.",
     icon: (
       <svg className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,6 +59,7 @@ const services = [
   },
   {
     title: "Google Ads",
+    slug: "google-ads-automation",
     description: "Data-driven PPC campaigns that maximize ROI and lower customer acquisition cost.",
     icon: (
       <svg className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,7 +95,7 @@ export default function ServicesSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-                <div 
+                <Link href={service.slug? service.slug : "/services"} 
                 key={index}
                 className="group relative p-8 rounded-2xl bg-slate-900/30 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden"
                 >
@@ -107,7 +113,7 @@ export default function ServicesSection() {
                     {service.description}
                     </p>
                 </div>
-                </div>
+                </Link>
             ))}
             </div>
         </div>

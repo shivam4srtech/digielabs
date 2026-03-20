@@ -56,7 +56,7 @@ input::-webkit-inner-spin-button {
 }
 @media (max-width:600px){
   .modal-body{
-    max-height: 95vh;
+    max-height: 80vh;
   }
   .mobile_contact a button{
     padding: .5rem;

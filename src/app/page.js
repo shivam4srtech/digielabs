@@ -57,7 +57,9 @@ export default function Home() {
     </section>
   
     <ServicesSection/>
-    <Pricing/>
+    <div className="px-6 bg-[#020617]">
+          <Pricing/>
+    </div>
    
     </>
     
