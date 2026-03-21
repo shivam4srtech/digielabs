@@ -8,17 +8,16 @@ const stats = [
   { label: 'Years Experience', value: '8+', color: 'text-purple-400' },
 ];
 export const metadata = {
-  title: "DigieLABS Blog | Tech Insights, Web Dev & SEO Trends",
-  description: "Read the latest insights from the DigieLABS team. Stay updated on web development trends, mobile app engineering, SEO strategies, and digital growth.",
+  title: "About DigieLABS | Digital Engineering & Growth Agency",
+  description: "Learn more about DigieLABS. We combine technical excellence with strategic thinking to deliver high-impact digital products, software, and marketing solutions.",
   keywords: [
-    "tech blog", 
-    "web development insights", 
-    "SEO trends", 
-    "mobile app development news", 
-    "digital marketing updates", 
-    "software engineering blog", 
-    "technology articles",
-    "DigieLABS news"
+    "about DigieLABS", 
+    "digital engineering agency", 
+    "software development team", 
+    "tech company Hyderabad", 
+    "IT solutions provider", 
+    "technology partners", 
+    "digital transformation experts"
   ],
 };
 
