@@ -1,10 +1,9 @@
-'use client'
-import dynamic from 'next/dynamic';
+
 import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import ReadyToScale from '../../components/ReadyToScale'
+import RelatedServices from '../../components/RelatedServices'
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
 import { 
   Target, 
   BarChart3, 
@@ -19,7 +18,20 @@ import {
   ArrowUpRight,
   GanttChartSquare
 } from 'lucide-react';
-
+export const metadata = {
+  title: "Google Ads Automation & PPC Management | DigieLABS",
+  description: "Maximize your ROI and lower customer acquisition costs with data-driven Google Ads automation. Let DigieLABS optimize your PPC campaigns for scalable growth.",
+  keywords: [
+    "Google Ads automation", 
+    "PPC management agency", 
+    "data-driven PPC campaigns", 
+    "maximize ROI", 
+    "automated ad bidding", 
+    "digital marketing strategy", 
+    "customer acquisition cost", 
+    "ROAS optimization"
+  ],
+};
 export default function GoogleAdsAutomationBlog() {
   const adFeatures = [
     {

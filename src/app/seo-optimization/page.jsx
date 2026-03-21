@@ -1,10 +1,23 @@
-'use client'
-import dynamic from 'next/dynamic';
+
 import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import ReadyToScale from '../../components/ReadyToScale'
+import RelatedServices from '../../components/RelatedServices'
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
+export const metadata = {
+  title: "Technical SEO Services & Organic Growth | DigieLABS",
+  description: "Drive organic growth and dominate search engine rankings with DigieLABS. Our data-driven, technical SEO strategies are designed to maximize your visibility and ROI.",
+  keywords: [
+    "SEO optimization services", 
+    "technical SEO agency", 
+    "organic growth strategies", 
+    "search engine ranking", 
+    "SEO experts", 
+    "data-driven SEO", 
+    "website optimization", 
+    "local SEO services"
+  ],
+};
 import { 
   Search, 
   BarChart4, 

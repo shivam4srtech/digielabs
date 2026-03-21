@@ -1,6 +1,18 @@
 
 import { Scale, FileCode, CreditCard, AlertTriangle, ShieldCheck, Mail } from 'lucide-react';
-
+export const metadata = {
+  title: "Terms and Conditions | DigieLABS",
+  description: "Review the Terms and Conditions for using DigieLABS' website and digital services. Learn about our user guidelines, service agreements, and legal policies.",
+  keywords: [
+    "terms and conditions", 
+    "terms of service", 
+    "user agreement", 
+    "service guidelines", 
+    "website policies", 
+    "legal terms", 
+    "DigieLABS terms"
+  ],
+};
 export default function TermsAndConditions() {
   const lastUpdated = "March 18, 2026";
 

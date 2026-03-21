@@ -1,11 +1,10 @@
-'use client'
-import dynamic from 'next/dynamic';
+
 import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
-const ScraperLiveStatus = dynamic(() => import('../../components/ScraperLiveStatus'), { ssr: false });
+import ReadyToScale from '../../components/ReadyToScale';
+import RelatedServices from '../../components/RelatedServices';
+import ScraperLiveStatus from '../../components/ScraperLiveStatus';
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
 import { 
   DatabaseZap, 
   Binary, 
@@ -21,7 +20,20 @@ import {
   Workflow,
   ServerCrash
 } from 'lucide-react';
-
+export const metadata = {
+  title: "Data Scraping & Automation Services | DigieLABS",
+  description: "Streamline your operations with DigieLABS' custom data scraping and automation services. Extract valuable web data accurately and efficiently to drive business decisions.",
+  keywords: [
+    "data scraping services", 
+    "web scraping company", 
+    "data automation solutions", 
+    "web data extraction", 
+    "automated data mining", 
+    "business intelligence", 
+    "custom data pipelines", 
+    "Python web scraping"
+  ],
+};
 export default function DataAutomationDetailedBlog() {
   const engineeringSpecs = [
     { 

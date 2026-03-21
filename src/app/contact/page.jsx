@@ -1,8 +1,21 @@
-'use client';
+
 import ContactUsForm from "../../components/ContactForm";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact DigieLABS | Get a Free IT & Development Proposal",
+  description: "Ready to scale your business? Get in touch with the DigieLABS team today for a free consultation on web development, mobile apps, and digital marketing.",
+  keywords: [
+    "contact DigieLABS", 
+    "get a free proposal", 
+    "hire web developers", 
+    "software development consultation", 
+    "tech agency Hyderabad", 
+    "contact digital marketing agency",
+    "IT support contact"
+  ],
+};
 export default function ContactPage() {
   const phoneNumber = "918050739493"; 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';

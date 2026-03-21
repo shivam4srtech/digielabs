@@ -1,10 +1,8 @@
-'use client'
-import dynamic from 'next/dynamic';
-import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+
+import ReadyToScale from '../../components/ReadyToScale';
+import RelatedServices from '../../components/RelatedServices';
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
 import { 
   Smartphone, 
   Layers, 
@@ -18,7 +16,20 @@ import {
   Settings2,
   Activity
 } from 'lucide-react';
-
+ export const metadata = {
+  title: "Custom Mobile App Development | iOS & Android | DigieLABS",
+  description: "Build native-feel iOS and Android applications with cross-platform efficiency. DigieLABS delivers scalable, secure, and user-centric mobile app development solutions.",
+  keywords: [
+    "mobile app development company", 
+    "custom iOS apps", 
+    "Android app developers", 
+    "cross-platform app development", 
+    "native mobile applications", 
+    "mobile UI/UX design", 
+    "app development agency", 
+    "scalable mobile solutions"
+  ],
+};
 export default function MobileEngineeringBlog() {
   const techStacks = [
     {

@@ -1,7 +1,20 @@
-import React from 'react';
+
 import { Eye, FileText, Lock, Globe, Mail } from 'lucide-react';
 import { BsShieldLock } from "react-icons/bs";
 
+export const metadata = {
+  title: "Privacy Policy | DigieLABS",
+  description: "Read the DigieLABS Privacy Policy to understand how we collect, use, and strictly protect your personal information and data when you use our services.",
+  keywords: [
+    "privacy policy", 
+    "data protection", 
+    "personal information", 
+    "user privacy", 
+    "DigieLABS privacy", 
+    "data security", 
+    "website terms"
+  ],
+};
 export default function PrivacyPolicy() {
   const lastUpdated = "March 18, 2026";
 

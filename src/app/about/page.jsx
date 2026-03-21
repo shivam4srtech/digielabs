@@ -1,13 +1,26 @@
-'use client'
-import dynamic from "next/dynamic";
+
 import Link from "next/link"
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
 const stats = [
   { label: 'Projects Delivered', value: '150+', color: 'text-blue-400' },
   { label: 'Client Satisfaction', value: '99%', color: 'text-purple-400' },
   { label: 'Expert Engineers', value: '25+', color: 'text-blue-400' },
   { label: 'Years Experience', value: '8+', color: 'text-purple-400' },
 ];
+export const metadata = {
+  title: "DigieLABS Blog | Tech Insights, Web Dev & SEO Trends",
+  description: "Read the latest insights from the DigieLABS team. Stay updated on web development trends, mobile app engineering, SEO strategies, and digital growth.",
+  keywords: [
+    "tech blog", 
+    "web development insights", 
+    "SEO trends", 
+    "mobile app development news", 
+    "digital marketing updates", 
+    "software engineering blog", 
+    "technology articles",
+    "DigieLABS news"
+  ],
+};
 
 export default function AboutPage() {
   return (

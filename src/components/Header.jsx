@@ -5,8 +5,6 @@ import { usePathname } from 'next/navigation'
 import ResponsiveRender from './ResponsiveRender';
 
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
-import { GoSearch } from "react-icons/go";
-
 import { useState, useRef, useEffect  } from "react";
 import ContactButton from "./ContactButton";
 export default function Header(){
@@ -84,101 +82,90 @@ export default function Header(){
                             <Link href={'/blogs'} className={`${defautNavClasses} ${pathname === "/blogs" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 " : ''}`} >Blogs</Link>
                         </li>
                     </ul>
-                <ResponsiveRender breakpoint={768}
-                    mobile={
-                        <div className="mobile_contact">
-                            <ContactButton/>   
+                    <div className="flex items-center">
+                        <div className="w-[100%] text-right mobile_contact">
+                                <ContactButton/>
                         </div>
-                    }
-                    desktop={
-                        <>
-                            <div className="flex items-center">
-                                <div className="w-[100%] text-right">
-                                        <ContactButton/>
+                    </div>
+                    <ResponsiveRender breakpoint={768}
+                        mobile={
+                            <>
+                            
+                            
+                                {/* ===== Overlay ===== */}
+                                <div
+                                    className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+                                    isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                                    }`}
+                                    onClick={() => setIsOpen(false)}
+                                />
+                                {/* ===== Offcanvas Sidebar ===== */}
+                                <div
+                                        className={`fixed top-0 left-0 h-full w-[260px] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
+                                        isOpen ? "translate-x-0" : "-translate-x-full"
+                                        }`}
+                                    >
+                                    {/* Close Button */}
+                                    <div className="flex justify-between p-4 border-b">
+                                    <div  className="md:text-3xl text-2xl font-extrabold text-black tracking-tighter block">
+                                        Digie<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">LABS.</span>
+                                    </div>
+                                    <button onClick={() => setIsOpen(false)}>
+                                        <IoCloseOutline size={26} />
+                                    </button>
+                                    </div>
+                                    
+                                    {/* Mobile Nav Links */}
+                                    <ul className="flex flex-col">
+                                    <li>
+                                        <Link
+                                        href="/"
+                                        onClick={() => setIsOpen(false)}
+                                        className={`${defautNavClasses} ${
+                                            pathname === "/" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
+                                        }`}
+                                        >
+                                        Home
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                        href="/about"
+                                        onClick={() => setIsOpen(false)}
+                                        className={`${defautNavClasses} ${
+                                            pathname === "/about" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
+                                        }`}
+                                        >
+                                        About
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                        href="/services"
+                                        onClick={() => setIsOpen(false)}
+                                        className={`${defautNavClasses} ${
+                                            pathname === "/services" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
+                                        }`}
+                                        >
+                                        Services
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                        href="/blogs"
+                                        onClick={() => setIsOpen(false)}
+                                        className={`${defautNavClasses} ${
+                                            pathname === "/blogs" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
+                                        }`}
+                                        >
+                                        Blogs
+                                        </Link>
+                                    </li>
+                                    </ul>
                                 </div>
-                            </div>
-                        </>
-                    }
-                />
-                <ResponsiveRender breakpoint={768}
-                    mobile={
-                        <>
-                           
-                           
-                            {/* ===== Overlay ===== */}
-                            <div
-                                className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
-                                isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                                }`}
-                                onClick={() => setIsOpen(false)}
-                            />
-                            {/* ===== Offcanvas Sidebar ===== */}
-                            <div
-                                    className={`fixed top-0 left-0 h-full w-[260px] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
-                                    isOpen ? "translate-x-0" : "-translate-x-full"
-                                    }`}
-                                >
-                                {/* Close Button */}
-                                <div className="flex justify-between p-4 border-b">
-                                <div  className="md:text-3xl text-2xl font-extrabold text-black tracking-tighter block">
-                                    Digie<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">LABS.</span>
-                                </div>
-                                <button onClick={() => setIsOpen(false)}>
-                                    <IoCloseOutline size={26} />
-                                </button>
-                                </div>
-                                 
-                                {/* Mobile Nav Links */}
-                                <ul className="flex flex-col">
-                                <li>
-                                    <Link
-                                    href="/"
-                                    onClick={() => setIsOpen(false)}
-                                    className={`${defautNavClasses} ${
-                                        pathname === "/" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
-                                    }`}
-                                    >
-                                    Home
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                    href="/about"
-                                    onClick={() => setIsOpen(false)}
-                                    className={`${defautNavClasses} ${
-                                        pathname === "/about" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
-                                    }`}
-                                    >
-                                    About
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                    href="/services"
-                                    onClick={() => setIsOpen(false)}
-                                    className={`${defautNavClasses} ${
-                                        pathname === "/services" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
-                                    }`}
-                                    >
-                                    Services
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                    href="/blogs"
-                                    onClick={() => setIsOpen(false)}
-                                    className={`${defautNavClasses} ${
-                                        pathname === "/blogs" ? "active text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" : ""
-                                    }`}
-                                    >
-                                    Blogs
-                                    </Link>
-                                </li>
-                                </ul>
-                            </div>
-                        </>
-                    }
-                />  
+                            </>
+                        }
+                    />  
             </header>
         </>
     );

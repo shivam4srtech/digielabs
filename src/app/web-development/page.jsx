@@ -1,10 +1,23 @@
-'use client'
-import dynamic from 'next/dynamic';
-import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+
+import ReadyToScale from '../../components/ReadyToScale'
+import RelatedServices  from '../../components/RelatedServices'
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
+
+export const metadata = {
+  title: "Custom Web Application & SaaS Development | DigieLABS",
+  description: "Build scalable, enterprise-grade web applications and complex SaaS platforms with DigieLABS. Our expert frontend and backend developers deliver high-impact, custom solutions.",
+  keywords: [
+    "custom web development", 
+    "web application development", 
+    "SaaS platform developers", 
+    "enterprise web tools", 
+    "frontend development", 
+    "backend engineering", 
+    "secure API integrations", 
+    "scalable web architecture"
+  ],
+};
 import { 
   Code2, 
   Cpu, 

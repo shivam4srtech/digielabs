@@ -1,10 +1,9 @@
-'use client'
-import dynamic from 'next/dynamic';
+
 import Link from 'next/link'
-const ReadyToScale = dynamic(() => import('../../components/ReadyToScale'), { ssr: false });
-const RelatedServices = dynamic(() => import('../../components/RelatedServices'), { ssr: false });
+import ReadyToScale from '../../components/ReadyToScale';
+import RelatedServices from '../../components/RelatedServices';
 import Pricing from '../../components/Pricing';
-const ScheduleModal = dynamic(() => import('../../components/ScheduleModal'), { ssr: false });
+import ScheduleModal from '../../components/ScheduleModal'
 import { 
   Layout, 
   Blocks, 
@@ -17,8 +16,20 @@ import {
   Globe,
   ArrowUpRight,
 } from 'lucide-react';
-import { FaWordpressSimple } from "react-icons/fa";
-
+export const metadata = {
+  title: "Custom WordPress Development Services | DigieLABS",
+  description: "Transform the world’s most popular CMS into a high-octane business engine with DigieLABS. We specialize in custom themes, secure plugins, and scalable architecture.",
+  keywords: [
+    "WordPress development company", 
+    "custom WordPress themes", 
+    "WordPress plugin development", 
+    "scalable CMS solutions", 
+    "enterprise WordPress", 
+    "website redesign", 
+    "WordPress performance optimization",
+    "headless WordPress"
+  ],
+};
 export default function WordPressEngineeringBlog() {
   const wpCapabilities = [
     {
